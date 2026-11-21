@@ -7,7 +7,7 @@ npm install && npm i express mysql2 redis ejs dotenv && npm i -D nodemon
 ```
 sudo docker pull mysql:8.0
 
-sudo docker run --name mysql-container --network app-network -e MYSQL_ROOT_PASSWORD=mroot -p 3306:3306 -d mysql:8.0
+sudo docker run --name mysql-container --network app-network -e MYSQL_ROOT_PASSWORD=xxx -p 3306:3306 -d mysql:8.0
 ```
 
 #Set up Redis Docker's container
