@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: node-container-mr
+    networks:
+      - app-network
+    volumes:
+      - node-redis-mysql:/app
+    ports:
+      - 3000:3000
+
+volumes:
+  node-redis-mysql:
+
+networks:
+  app-network:
+    driver: bridge
