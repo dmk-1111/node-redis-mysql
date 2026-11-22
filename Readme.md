@@ -1,13 +1,18 @@
 #Requirement dependencies:
 ```
-npm install && npm i express mysql2 redis ejs dotenv && npm i -D nodemon
+npm install && npm i express pg redis ejs dotenv && npm i -D nodemon
 ```
 
 #Set up MySql Docker's container
 ```
-sudo docker pull mysql:8.0
+sudo docker pull postgres:14
 
-sudo docker run --name mysql-container --network app-network -e MYSQL_ROOT_PASSWORD=xxx -p 3306:3306 -d mysql:8.0
+sudo docker run --network node-db-redis_app-network -p 5433:5432 --name postgres-xxx -e POSTGRES_PASSWORD=xxx -d postgres:14
+```
+
+#Execute into Postgres SQL:
+```
+sudo docker exec -it postgres_docker_container_name psql -U postgres
 ```
 
 #Set up Redis Docker's container

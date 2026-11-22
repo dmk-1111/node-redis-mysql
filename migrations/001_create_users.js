@@ -1,7 +1,7 @@
 export async function up(connection) {
     await connection.query(`
         CREATE TABLE users (
-            id INT AUTO_INCREMENT PRIMARY KEY,
+            id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
             name VARCHAR(100) NOT NULL,
             email VARCHAR(150) NOT NULL UNIQUE,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

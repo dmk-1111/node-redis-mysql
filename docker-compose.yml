@@ -1,17 +1,17 @@
 services:
   app:
     build: .
-    container_name: node-container-mr
-    networks:
-      - app-network
+    container_name: node-container-pr
+    # networks:
+    #   - node-db-redis_app-network
     volumes:
-      - node-redis-mysql:/app
+      - node-redis-postgres:/app
     ports:
       - 3000:3000
 
 volumes:
-  node-redis-mysql:
+  node-redis-postgres:
 
-networks:
-  app-network:
-    driver: bridge
+# networks:
+#   node-db-redis_app-network:
+#     driver: bridge
